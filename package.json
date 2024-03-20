@@ -1,0 +1,12 @@
+{
+    "name": "employee-tracker",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "author": "Cassie Sprague",
+    "license": "MIT",
+    "dependencies": {
+        "mysql2": "^2.2.5",
+        "inquirer": "^8.2.4"
+    }
+}
