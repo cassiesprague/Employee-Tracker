@@ -33,5 +33,31 @@ inquirer
         viewDepartments()
     } else if (answer === "View all roles"){
         viewRoles()
+    } else if (answer === "View all employees"){
+        viewEmployees()
+    } else if (answer === "Add a department"){
+        addDepartment()
+    } else if (answer === "Add a role"){
+        addRole()
+    } else if (answer === "Add an employee"){
+        addEmployee()
+    } else if (answer === "Update an employee role"){
+        updateEmployee()
+    } else if (answer === "Update employee manager"){
+        updateManager()
+    } else if (answer === "View employees by manager"){
+        viewByManager()
+    } else if (answer === "View employees by department"){
+        viewByDepartment()
+    } else if (answer === "Delete departments"){
+        deleteDepartments()
+    } else if (answer === "Delete roles"){
+        deleteRoles()
+    } else if (answer === "Delete employees"){
+        deleteEmployees()
+    } else if (answer === "View the total utilized budget of department"){
+        viewBudget()
+    } else {
+        exit()
     }
 })
