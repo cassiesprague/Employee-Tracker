@@ -6,7 +6,8 @@
     "author": "Cassie Sprague",
     "license": "MIT",
     "dependencies": {
-        "mysql2": "^2.2.5",
-        "inquirer": "^8.2.4"
+        "dotenv": "^8.6.0",
+        "inquirer": "^8.2.4",
+        "mysql2": "^2.2.5"
     }
 }
