@@ -1,6 +1,7 @@
 //Below are the packages needed to run the application
 const inquirer = require("inquirer");
 const mysql = require("mysql2");
+require("console.table");
 
 //Below shows how to connect to the database i got from activity 12 in class
 const db = mysql.createConnection(
@@ -13,9 +14,13 @@ const db = mysql.createConnection(
     console.log(`Connected to the tracker_db database!`)
 );
 
+function init(){
+    menu();
+}
+
 //Below shows my first question that will show when running the app
-inquirer
-.prompt([
+async function menu(){
+await inquirer.prompt([
     {
         type: "list",
         name: "options",
@@ -61,3 +66,14 @@ inquirer
         exit()
     }
 })
+
+const viewDepartments = () => {
+    connect.query(
+        "SELECT * FROM department;",
+        (err, results) => {
+            console.table(results);
+            menu();
+        }
+    )
+}
+}
