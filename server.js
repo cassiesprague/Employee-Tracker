@@ -1,7 +1,6 @@
 //Below are the packages needed to run the application
 const inquirer = require("inquirer");
 const mysql = require("mysql2");
-require("console.table");
 
 //Below shows how to connect to the database i got from activity 12 in class
 const db = mysql.createConnection(
@@ -14,13 +13,8 @@ const db = mysql.createConnection(
     console.log(`Connected to the tracker_db database!`)
 );
 
-function init(){
-    menu();
-}
-
 //Below shows my first question that will show when running the app
-async function menu(){
-await inquirer.prompt([
+inquirer.prompt([
     {
         type: "list",
         name: "options",
@@ -28,6 +22,7 @@ await inquirer.prompt([
         choices: ["View all departments", "View all roles", "View all employees", "Add a department", "Add a role", "Add an employee", "Update an employee role", "Update employee manager", "View employees by manager", "View employees by department", "Delete departments", "Delete roles", "Delete employees", "View the total utilized budget of department", "Exit",],
     },
 ])
+
 
 //Below shows an arrow function that creates the const for choices
 //Used the following link figure out correct way to get answers formatted 
@@ -70,28 +65,15 @@ await inquirer.prompt([
 const viewDepartments = () => {
     connect.query(
         "SELECT * FROM department;",
-        (err, results) => {
-            console.table(results);
-            menu();
-        }
     )
 };
 const viewRoles = () => {
     connect.query(
         "SELECT * FROM role;",
-        (err, results) => {
-            console.table(results);
-            menu();
-        }
     )
 };
 const viewEmployees = () => {
     connect.query(
         "SELECT * FROM employee;",
-        (err, results) => {
-            console.table(results);
-            menu();
-        }
     )
 };
-}
