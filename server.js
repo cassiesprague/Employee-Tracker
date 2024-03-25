@@ -75,5 +75,23 @@ const viewDepartments = () => {
             menu();
         }
     )
-}
+};
+const viewRoles = () => {
+    connect.query(
+        "SELECT * FROM role;",
+        (err, results) => {
+            console.table(results);
+            menu();
+        }
+    )
+};
+const viewEmployees = () => {
+    connect.query(
+        "SELECT * FROM employee;",
+        (err, results) => {
+            console.table(results);
+            menu();
+        }
+    )
+};
 }
