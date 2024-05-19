@@ -3,7 +3,7 @@ const inquirer = require("inquirer");
 const mysql = require("mysql2");
 
 //Below shows how to connect to the database i got from activity 12 in class
-const db = mysql.createConnection(
+const tracker_db = mysql.createConnection(
     {
         host: 'localhost',
         user: 'root',
@@ -75,5 +75,55 @@ const viewRoles = () => {
 const viewEmployees = () => {
     connect.query(
         "SELECT * FROM employee;",
+    )
+};
+const addDepartment = () => {
+    connect.query(
+        "INSERT INTO department;",
+    )
+};
+const addRole = () => {
+    connect.query(
+        "INSERT INTO role;",
+    )
+};
+const addEmployee = () => {
+    connect.query(
+        "INSERT INTO employee;",
+    )
+};
+const updateEmployee = () => {
+    connect.query(
+        "UPDATE employee;",
+    )
+};
+const updateManager = () => {
+    connect.query(
+        "UPDATE manager;",
+    )
+};
+const viewByManager = () => {
+    connect.query(
+        "SELECT * FROM manager;",
+    )
+};
+const viewByDepartment = () => {
+    connect.query(
+        "SELECT * FROM department;",
+    )
+};
+const deleteDepartments = () => {
+    connect.query(
+        "DELETE departments;",
+    )
+};
+const deleteRoles = () => {
+    connect.query(
+        "DELETE roles;",
+    )
+};
+const viewBudget = () => {
+    connect.query(
+        "SELECT * FROM budget;",
     )
 };
