@@ -3,7 +3,7 @@ const inquirer = require("inquirer");
 const mysql = require("mysql2");
 
 //Below shows how to connect to the database i got from activity 12 in class
-const tracker_db = mysql.createConnection(
+const db = mysql.createConnection(
     {
         host: 'localhost',
         user: 'root',
